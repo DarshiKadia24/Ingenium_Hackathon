@@ -9,7 +9,6 @@ import {
   Card,
   CardContent,
   CardActions,
-  useTheme,
   Avatar,
   Chip,
   IconButton,
@@ -18,7 +17,6 @@ import {
   LocalHospital as HospitalIcon,
   MedicalServices as MedicalIcon,
   HealthAndSafety as HealthIcon,
-  Healing as HealingIcon,
   Psychology as PsychologyIcon,
   Security as SecurityIcon,
   TrendingUp as TrendingIcon,
@@ -27,7 +25,6 @@ import {
   EmojiEvents as AwardIcon,
   Star as StarIcon,
   ArrowForward as ArrowIcon,
-  CheckCircle as CheckIcon,
   LinkedIn as LinkedInIcon,
   Twitter as TwitterIcon,
   GitHub as GitHubIcon,
@@ -38,7 +35,6 @@ import { motion } from 'framer-motion';
 
 const LandingPage = () => {
   const { isAuthenticated } = useAuth();
-  const theme = useTheme();
   const heroRef = useRef(null);
 
   useEffect(() => {
