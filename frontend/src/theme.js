@@ -1,50 +1,50 @@
 import { createTheme } from '@mui/material/styles';
 
-// Premium Healthcare Design System Colors - Modern Palette
+// Premium Luxury Design System Colors - Elegant Palette
 export const healthcareColors = {
-  primary: '#0d47a1', // Deep Blue
-  secondary: '#00897b', // Medical Teal
-  purple: '#6200EA', // Modern Purple
-  pink: '#E91E63', // Accent Pink
-  accent: '#d32f2f', // Alert Red
-  background: '#fafafa', // Hospital White
-  backgroundDark: '#f5f7fa',
+  primary: '#1E3A5F', // Sophisticated Blue
+  secondary: '#6366F1', // Subtle Purple
+  purple: '#6366F1', // Subtle Purple
+  pink: '#D4AF37', // Gold Accent
+  accent: '#D4AF37', // Gold Accent
+  background: '#F8F9FA', // Soft Gray
+  backgroundDark: '#0F1419', // Deep Navy
   
   // Modern Gradients
-  gradientPrimary: 'linear-gradient(135deg, #0d47a1 0%, #1976d2 100%)',
-  gradientSecondary: 'linear-gradient(135deg, #00897b 0%, #26a69a 100%)',
-  gradientPurple: 'linear-gradient(135deg, #6200EA 0%, #7c4dff 100%)',
-  gradientPink: 'linear-gradient(135deg, #E91E63 0%, #ec407a 100%)',
-  gradientHero: 'linear-gradient(135deg, #0d47a1 0%, #00897b 50%, #6200EA 100%)',
-  gradientCard: 'linear-gradient(135deg, rgba(13, 71, 161, 0.05) 0%, rgba(0, 137, 123, 0.05) 100%)',
+  gradientPrimary: 'linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%)',
+  gradientSecondary: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+  gradientPurple: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+  gradientPink: 'linear-gradient(135deg, #D4AF37 0%, #F0C850 100%)',
+  gradientHero: 'linear-gradient(135deg, #0F1419 0%, #1E3A5F 50%, #2C5282 100%)',
+  gradientCard: 'linear-gradient(135deg, rgba(30, 58, 95, 0.03) 0%, rgba(99, 102, 241, 0.03) 100%)',
   
-  light: '#e3f2fd',
-  dark: '#1565c0',
+  light: '#F8F9FA',
+  dark: '#1F2937',
   
   // Modern shadow colors
-  shadowPrimary: 'rgba(13, 71, 161, 0.2)',
-  shadowSecondary: 'rgba(0, 137, 123, 0.2)',
-  shadowPurple: 'rgba(98, 0, 234, 0.2)',
-  shadowPink: 'rgba(233, 30, 99, 0.2)',
+  shadowPrimary: 'rgba(30, 58, 95, 0.15)',
+  shadowSecondary: 'rgba(99, 102, 241, 0.15)',
+  shadowPurple: 'rgba(99, 102, 241, 0.15)',
+  shadowPink: 'rgba(212, 175, 55, 0.25)',
 };
 
-// Healthcare specialty colors - Enhanced with gradients
+// Specialty colors - Premium palette
 export const specialtyColors = {
-  'Health Informatics': '#0d47a1',
-  'Medical Devices': '#00897b',
-  'Telemedicine': '#6200EA',
-  'Clinical Data': '#0277bd',
-  'Healthcare Cybersecurity': '#E91E63',
-  'General': '#0d47a1',
+  'Health Informatics': '#1E3A5F',
+  'Medical Devices': '#6366F1',
+  'Telemedicine': '#8B5CF6',
+  'Clinical Data': '#2C5282',
+  'Healthcare Cybersecurity': '#D4AF37',
+  'General': '#1E3A5F',
 };
 
 export const specialtyGradients = {
-  'Health Informatics': 'linear-gradient(135deg, #0d47a1 0%, #1976d2 100%)',
-  'Medical Devices': 'linear-gradient(135deg, #00897b 0%, #26a69a 100%)',
-  'Telemedicine': 'linear-gradient(135deg, #6200EA 0%, #7c4dff 100%)',
-  'Clinical Data': 'linear-gradient(135deg, #0277bd 0%, #039be5 100%)',
-  'Healthcare Cybersecurity': 'linear-gradient(135deg, #E91E63 0%, #ec407a 100%)',
-  'General': 'linear-gradient(135deg, #0d47a1 0%, #1976d2 100%)',
+  'Health Informatics': 'linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%)',
+  'Medical Devices': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+  'Telemedicine': 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
+  'Clinical Data': 'linear-gradient(135deg, #2C5282 0%, #3B82F6 100%)',
+  'Healthcare Cybersecurity': 'linear-gradient(135deg, #D4AF37 0%, #F0C850 100%)',
+  'General': 'linear-gradient(135deg, #1E3A5F 0%, #2C5282 100%)',
 };
 
 // Helper function to get specialty gradient
@@ -62,54 +62,53 @@ export const getSpecialtyBgColor = (specialty) => {
   return healthcareColors.light;
 };
 
-// Glassmorphism styles - Enhanced
+// Glassmorphism styles - Premium
 export const glassmorphism = {
-  background: 'rgba(255, 255, 255, 0.85)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  border: '1px solid rgba(255, 255, 255, 0.5)',
-  boxShadow: '0 8px 32px 0 rgba(13, 71, 161, 0.15)',
+  background: 'rgba(255, 255, 255, 0.95)',
+  backdropFilter: 'blur(16px)',
+  WebkitBackdropFilter: 'blur(16px)',
+  border: '1px solid rgba(255, 255, 255, 0.8)',
+  boxShadow: '0 8px 32px 0 rgba(30, 58, 95, 0.08)',
 };
 
-// Modern shadow system
+// Premium shadow system
 export const shadows = {
-  sm: '0 2px 8px rgba(13, 71, 161, 0.08)',
-  md: '0 4px 16px rgba(13, 71, 161, 0.12)',
-  lg: '0 8px 24px rgba(13, 71, 161, 0.16)',
-  xl: '0 12px 32px rgba(13, 71, 161, 0.2)',
+  sm: '0 2px 8px rgba(30, 58, 95, 0.06)',
+  md: '0 4px 16px rgba(30, 58, 95, 0.08)',
+  lg: '0 8px 24px rgba(30, 58, 95, 0.1)',
+  xl: '0 12px 32px rgba(30, 58, 95, 0.12)',
   colored: {
-    primary: '0 8px 24px rgba(13, 71, 161, 0.3)',
-    secondary: '0 8px 24px rgba(0, 137, 123, 0.3)',
-    purple: '0 8px 24px rgba(98, 0, 234, 0.3)',
-    pink: '0 8px 24px rgba(233, 30, 99, 0.3)',
+    primary: '0 8px 24px rgba(30, 58, 95, 0.2)',
+    secondary: '0 8px 24px rgba(99, 102, 241, 0.2)',
+    purple: '0 8px 24px rgba(99, 102, 241, 0.2)',
+    pink: '0 8px 24px rgba(212, 175, 55, 0.3)',
   },
 };
 
-// Create premium theme
 const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
       main: healthcareColors.primary,
-      light: '#1976d2',
-      dark: '#0d47a1',
+      light: '#2C5282',
+      dark: '#0F1419',
       contrastText: '#fff',
     },
     secondary: {
       main: healthcareColors.secondary,
-      light: '#4db6ac',
-      dark: '#00695c',
+      light: '#8B5CF6',
+      dark: '#4F46E5',
       contrastText: '#fff',
     },
     error: {
-      main: healthcareColors.accent,
-      light: '#ef5350',
-      dark: '#c62828',
+      main: '#EF4444',
+      light: '#F87171',
+      dark: '#DC2626',
     },
     success: {
-      main: '#4caf50',
-      light: '#81c784',
-      dark: '#388e3c',
+      main: '#10B981',
+      light: '#34D399',
+      dark: '#059669',
     },
     background: {
       default: healthcareColors.background,
@@ -128,39 +127,39 @@ const theme = createTheme({
       'sans-serif',
     ].join(','),
     h1: {
-      fontFamily: 'Poppins, sans-serif',
+      fontFamily: 'Inter, sans-serif',
       fontWeight: 700,
-      fontSize: '2.5rem',
+      fontSize: '3rem',
       lineHeight: 1.2,
       letterSpacing: '-0.02em',
     },
     h2: {
-      fontFamily: 'Poppins, sans-serif',
+      fontFamily: 'Inter, sans-serif',
       fontWeight: 700,
-      fontSize: '2rem',
+      fontSize: '2.25rem',
       lineHeight: 1.3,
       letterSpacing: '-0.01em',
     },
     h3: {
-      fontFamily: 'Poppins, sans-serif',
+      fontFamily: 'Inter, sans-serif',
       fontWeight: 600,
-      fontSize: '1.75rem',
+      fontSize: '1.875rem',
       lineHeight: 1.3,
     },
     h4: {
-      fontFamily: 'Poppins, sans-serif',
+      fontFamily: 'Inter, sans-serif',
       fontWeight: 600,
       fontSize: '1.5rem',
       lineHeight: 1.4,
     },
     h5: {
-      fontFamily: 'Poppins, sans-serif',
+      fontFamily: 'Inter, sans-serif',
       fontWeight: 600,
       fontSize: '1.25rem',
-      lineHeight: 1.4,
+      lineHeight: 1.5,
     },
     h6: {
-      fontFamily: 'Poppins, sans-serif',
+      fontFamily: 'Inter, sans-serif',
       fontWeight: 600,
       fontSize: '1rem',
       lineHeight: 1.5,
@@ -168,12 +167,12 @@ const theme = createTheme({
     body1: {
       fontFamily: 'Inter, sans-serif',
       fontSize: '1rem',
-      lineHeight: 1.6,
+      lineHeight: 1.7,
     },
     body2: {
       fontFamily: 'Inter, sans-serif',
       fontSize: '0.875rem',
-      lineHeight: 1.5,
+      lineHeight: 1.6,
     },
     code: {
       fontFamily: 'Roboto Mono, monospace',
@@ -182,22 +181,22 @@ const theme = createTheme({
   },
   spacing: 8,
   shape: {
-    borderRadius: 16,
+    borderRadius: 12,
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderRadius: 12,
+          borderRadius: 10,
           padding: '12px 32px',
           fontWeight: 600,
           fontSize: '0.9375rem',
           boxShadow: 'none',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
-            transform: 'translateY(-2px)',
-            boxShadow: '0 8px 20px rgba(13, 71, 161, 0.25)',
+            transform: 'translateY(-1px)',
+            boxShadow: '0 4px 12px rgba(30, 58, 95, 0.15)',
           },
           '&:active': {
             transform: 'translateY(0)',
@@ -207,14 +206,14 @@ const theme = createTheme({
           background: healthcareColors.gradientPrimary,
           '&:hover': {
             background: healthcareColors.gradientPrimary,
-            boxShadow: '0 8px 20px rgba(13, 71, 161, 0.35)',
+            boxShadow: '0 4px 12px rgba(30, 58, 95, 0.25)',
           },
         },
         containedSecondary: {
           background: healthcareColors.gradientSecondary,
           '&:hover': {
             background: healthcareColors.gradientSecondary,
-            boxShadow: '0 8px 20px rgba(0, 137, 123, 0.35)',
+            boxShadow: '0 4px 12px rgba(99, 102, 241, 0.25)',
           },
         },
       },
@@ -222,13 +221,13 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 20,
-          boxShadow: '0 4px 20px rgba(13, 71, 161, 0.1)',
-          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-          border: '1px solid rgba(13, 71, 161, 0.08)',
+          borderRadius: 16,
+          boxShadow: '0 2px 12px rgba(30, 58, 95, 0.06)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          border: '1px solid rgba(30, 58, 95, 0.06)',
           '&:hover': {
-            transform: 'translateY(-4px)',
-            boxShadow: '0 12px 32px rgba(13, 71, 161, 0.18)',
+            transform: 'translateY(-2px)',
+            boxShadow: '0 8px 24px rgba(30, 58, 95, 0.1)',
           },
         },
       },
@@ -236,17 +235,17 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          borderRadius: 20,
-          boxShadow: '0 2px 12px rgba(13, 71, 161, 0.08)',
+          borderRadius: 16,
+          boxShadow: '0 1px 8px rgba(30, 58, 95, 0.06)',
         },
         elevation1: {
-          boxShadow: '0 2px 8px rgba(13, 71, 161, 0.08)',
+          boxShadow: '0 1px 8px rgba(30, 58, 95, 0.06)',
         },
         elevation2: {
-          boxShadow: '0 4px 16px rgba(13, 71, 161, 0.1)',
+          boxShadow: '0 2px 12px rgba(30, 58, 95, 0.08)',
         },
         elevation3: {
-          boxShadow: '0 6px 20px rgba(13, 71, 161, 0.12)',
+          boxShadow: '0 4px 16px rgba(30, 58, 95, 0.1)',
         },
       },
     },
@@ -254,16 +253,16 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '& .MuiOutlinedInput-root': {
-            borderRadius: 12,
-            transition: 'all 0.3s ease',
+            borderRadius: 10,
+            transition: 'all 0.2s ease',
             '&:hover .MuiOutlinedInput-notchedOutline': {
               borderColor: healthcareColors.primary,
-              borderWidth: '2px',
+              borderWidth: '1px',
             },
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
               borderColor: healthcareColors.primary,
               borderWidth: '2px',
-              boxShadow: '0 0 0 3px rgba(13, 71, 161, 0.1)',
+              boxShadow: '0 0 0 3px rgba(30, 58, 95, 0.08)',
             },
           },
         },
@@ -274,9 +273,9 @@ const theme = createTheme({
         root: {
           borderRadius: 8,
           fontWeight: 600,
-          transition: 'all 0.3s ease',
+          transition: 'all 0.2s ease',
           '&:hover': {
-            transform: 'scale(1.05)',
+            transform: 'scale(1.02)',
           },
         },
       },
@@ -284,8 +283,8 @@ const theme = createTheme({
     MuiAvatar: {
       styleOverrides: {
         root: {
-          border: '3px solid white',
-          boxShadow: '0 4px 12px rgba(13, 71, 161, 0.2)',
+          border: '2px solid white',
+          boxShadow: '0 2px 8px rgba(30, 58, 95, 0.12)',
         },
       },
     },
