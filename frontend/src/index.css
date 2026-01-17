@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #fafafa 0%, #f5f7fa 100%);
+  background: #F8F9FA;
 }
 
 code {
@@ -34,41 +34,54 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0d47a1;
+  background: #1E3A5F;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1565c0;
+  background: #2C5282;
 }
 
 /* Premium Animation Utilities */
-@keyframes pulse {
-  0%, 100% {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
     opacity: 1;
     transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(13, 71, 161, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(13, 71, 161, 0.6), 0 0 50px rgba(13, 71, 161, 0.4);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
   }
 }
 
@@ -81,88 +94,82 @@ html {
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Glassmorphism utility class - Premium */
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(30, 58, 95, 0.08);
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Dark glassmorphism */
+.glass-dark {
+  background: rgba(30, 58, 95, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 58, 95, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(30, 58, 95, 0.1);
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Performance optimizations */
+.animate-element {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Smooth transitions for interactive elements */
+button, a, [role="button"] {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* Card hover effects - Premium */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes slideInUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #1E3A5F 0%, #6366F1 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+/* Modern button styles */
+.modern-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.modern-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: left 0.4s ease;
+}
+
+.modern-button:hover::before {
+  left: 100%;
+}
+
+/* Animated background gradient */
+.animated-gradient {
+  background: linear-gradient(135deg, #0F1419 0%, #1E3A5F 50%, #2C5282 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
 }
 
 @keyframes gradientShift {
@@ -177,97 +184,7 @@ html {
   }
 }
 
-/* Glassmorphism utility class - Enhanced */
-.glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 32px 0 rgba(13, 71, 161, 0.15);
-}
-
-/* Dark glassmorphism */
-.glass-dark {
-  background: rgba(13, 71, 161, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(13, 71, 161, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(13, 71, 161, 0.2);
-}
-
-/* Performance optimizations */
-.animate-element {
-  will-change: transform, opacity;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-/* Smooth transitions for interactive elements */
-button, a, [role="button"] {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Card hover effects - Enhanced */
-.card-hover {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.card-hover:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(13, 71, 161, 0.25);
-}
-
-/* Gradient text effect */
-.gradient-text {
-  background: linear-gradient(135deg, #0d47a1 0%, #00897b 50%, #6200EA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Modern button styles */
-.modern-button {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.modern-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: left 0.5s ease;
-}
-
-.modern-button:hover::before {
-  left: 100%;
-}
-
-/* Animated background gradient */
-.animated-gradient {
-  background: linear-gradient(135deg, #0d47a1 0%, #00897b 50%, #6200EA 100%);
-  background-size: 200% 200%;
-  animation: gradientShift 15s ease infinite;
-}
-
-/* Icon animations */
-.icon-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.icon-pulse {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.icon-rotate {
-  animation: rotate 20s linear infinite;
-}
+/* Remove all icon animations - keep design minimal and professional */
 
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
@@ -286,7 +203,7 @@ button, a, [role="button"] {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   background-size: 200% 100%;
