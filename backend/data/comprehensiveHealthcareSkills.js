@@ -1,4 +1,4 @@
-// Comprehensive Healthcare Technology Skills (50+ skills with enhanced healthcare context)
+// Comprehensive Healthcare Technology Skills (53 skills with enhanced healthcare context)
 const comprehensiveHealthcareSkills = [
   // Clinical Skills (15 skills)
   {
