@@ -64,20 +64,19 @@ function AppContent() {
 
           {/* Protected routes with DashboardLayout */}
           <Route
-            path="/"
             element={
               <ProtectedRoute>
                 <DashboardLayout />
               </ProtectedRoute>
             }
           >
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="skills" element={<SkillsAssessment />} />
-            <Route path="career-paths" element={<CareerPaths />} />
-            <Route path="recommendations" element={<Recommendations />} />
-            <Route path="gap-analysis" element={<GapAnalysis />} />
-            <Route path="course-recommendations" element={<CourseRecommendations />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/skills" element={<SkillsAssessment />} />
+            <Route path="/career-paths" element={<CareerPaths />} />
+            <Route path="/recommendations" element={<Recommendations />} />
+            <Route path="/gap-analysis" element={<GapAnalysis />} />
+            <Route path="/course-recommendations" element={<CourseRecommendations />} />
           </Route>
 
           {/* 404 Fallback Route */}
