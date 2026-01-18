@@ -263,8 +263,8 @@ const GapAnalysis = () => {
           </Box>
         )}
 
-        {analysis && !analyzing && (
-          <Box sx={{ opacity: 0 }}>
+{analysis && !analyzing && (
+  <Box>
             <Grid container spacing={3}>
               {/* Readiness Score Card */}
               <Grid item xs={12} md={4}>

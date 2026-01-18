@@ -199,7 +199,7 @@ const LandingPage = () => {
                 sx={{
                   mb: 3,
                   bgcolor: 'rgba(255, 255, 255, 0.2)',
-                  color: 'white',
+                  color: 'black',
                   fontWeight: 600,
                   fontSize: '0.9rem',
                   py: 2.5,
@@ -290,7 +290,7 @@ const LandingPage = () => {
                       endIcon={<ArrowIcon />}
                       sx={{
                         bgcolor: 'white',
-                        color: 'primary.main',
+                        color: 'white',
                         px: 5,
                         py: 2,
                         fontSize: '1.1rem',
@@ -313,7 +313,7 @@ const LandingPage = () => {
                       sx={{
                         borderColor: 'white',
                         borderWidth: 2,
-                        color: 'white',
+                        color: 'black',
                         px: 5,
                         py: 2,
                         fontSize: '1.1rem',

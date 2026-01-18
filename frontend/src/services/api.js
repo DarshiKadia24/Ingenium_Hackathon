@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-// Create axios instance with base URL
+// Create axios instance
 const api = axios.create({
-  baseURL: '/api', // Proxy will forward to backend
+  baseURL: '/api', // forwarded to backend via proxy
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Request interceptor to add auth token
+// 🔐 Attach token to every request
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -17,54 +17,54 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Response interceptor to handle errors
+// 🚫 RESPONSE INTERCEPTOR (DISABLED AUTO LOGOUT FOR DEV)
 api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
+  (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      // Unauthorized - clear token and redirect to login
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
-    }
+    // Hackathon mode: do NOT auto logout on 401
     return Promise.reject(error);
   }
 );
 
-// Auth API calls
+/* =========================
+   AUTH APIs
+========================= */
 export const authAPI = {
-  register: (userData) => api.post('/auth/register', userData),
-  login: (credentials) => api.post('/auth/login', credentials),
+  register: (data) => api.post('/auth/register', data),
+  login: (data) => api.post('/auth/login', data),
   getMe: () => api.get('/auth/me'),
 };
 
-// Users API calls
+/* =========================
+   USER APIs
+========================= */
 export const usersAPI = {
   getUserById: (id) => api.get(`/users/${id}`),
-  updateUser: (id, userData) => api.put(`/users/${id}`, userData),
+  updateUser: (id, data) => api.put(`/users/${id}`, data),
   getUserProgress: (id) => api.get(`/users/${id}/progress`),
 };
 
-// Skills API calls
+/* =========================
+   SKILLS APIs
+========================= */
 export const skillsAPI = {
   getAllSkills: (params) => api.get('/skills', { params }),
   getSkillById: (id) => api.get(`/skills/${id}`),
-  getSkillsBySpecialty: (specialty) => api.get(`/skills/specialty/${specialty}`),
+  getSkillsBySpecialty: (specialty) =>
+    api.get(`/skills/specialty/${specialty}`),
   getUserSkills: (userId) => api.get(`/skills/user/${userId}`),
   rateSkill: (data) => api.post('/skills/rate', data),
-  createSkill: (skillData) => api.post('/skills', skillData),
-  updateSkill: (id, skillData) => api.put(`/skills/${id}`, skillData),
+  createSkill: (data) => api.post('/skills', data),
+  updateSkill: (id, data) => api.put(`/skills/${id}`, data),
   deleteSkill: (id) => api.delete(`/skills/${id}`),
 };
 
-// User Skills API calls
+/* =========================
+   USER SKILLS APIs
+========================= */
 export const userSkillsAPI = {
   getAllUserSkills: (params) => api.get('/user-skills', { params }),
   getUserSkillById: (id) => api.get(`/user-skills/${id}`),
@@ -73,16 +73,20 @@ export const userSkillsAPI = {
   deleteUserSkill: (id) => api.delete(`/user-skills/${id}`),
 };
 
-// Courses API calls
+/* =========================
+   COURSES APIs
+========================= */
 export const coursesAPI = {
   getAllCourses: (params) => api.get('/courses', { params }),
   getCourseById: (id) => api.get(`/courses/${id}`),
-  createCourse: (courseData) => api.post('/courses', courseData),
-  updateCourse: (id, courseData) => api.put(`/courses/${id}`, courseData),
+  createCourse: (data) => api.post('/courses', data),
+  updateCourse: (id, data) => api.put(`/courses/${id}`, data),
   deleteCourse: (id) => api.delete(`/courses/${id}`),
 };
 
-// Career Paths API calls
+/* =========================
+   CAREER PATH APIs
+========================= */
 export const careerPathsAPI = {
   getAllCareerPaths: (params) => api.get('/career-paths', { params }),
   getCareerPathById: (id) => api.get(`/career-paths/${id}`),
@@ -91,52 +95,81 @@ export const careerPathsAPI = {
   deleteCareerPath: (id) => api.delete(`/career-paths/${id}`),
 };
 
-// Recommendations API calls
+/* =========================
+   RECOMMENDATIONS APIs
+========================= */
 export const recommendationsAPI = {
-  getUserRecommendations: (userId) => api.get(`/recommendations/${userId}`),
-  getSpecialtyRecommendations: (specialty) => api.get(`/recommendations/specialty/${specialty}`),
+  getUserRecommendations: (userId) =>
+    api.get(`/recommendations/${userId}`),
+  getSpecialtyRecommendations: (specialty) =>
+    api.get(`/recommendations/specialty/${specialty}`),
 };
 
-// Progress API calls
+/* =========================
+   PROGRESS APIs
+========================= */
 export const progressAPI = {
   getUserProgress: (userId) => api.get(`/progress/${userId}`),
   updateProgress: (data) => api.post('/progress/update', data),
 };
 
-// Analysis API calls
+/* =========================
+   ANALYSIS APIs
+========================= */
 export const analysisAPI = {
   analyzeGaps: (data) => api.post('/analysis/gap', data),
-  getRecommendations: (data) => api.post('/analysis/recommendations', data),
-  generateLearningPath: (data) => api.post('/analysis/learning-path', data),
+  getRecommendations: (data) =>
+    api.post('/analysis/recommendations', data),
+  generateLearningPath: (data) =>
+    api.post('/analysis/learning-path', data),
 };
 
-// GitHub API calls (External API Integration)
+/* =========================
+   GITHUB APIs
+========================= */
 export const githubAPI = {
   getProjects: (params) => api.get('/github/projects', { params }),
-  getProjectRecommendations: (data) => api.post('/github/recommendations', data),
+  getProjectRecommendations: (data) =>
+    api.post('/github/recommendations', data),
 };
 
-// Academic Performance API calls
+/* =========================
+   ACADEMIC APIs
+========================= */
 export const academicAPI = {
-  getAcademicPerformance: (userId) => api.get(`/academic/${userId}`),
-  updateAcademicPerformance: (userId, data) => api.post(`/academic/${userId}`, data),
-  addCourse: (userId, courseData) => api.post(`/academic/${userId}/courses`, courseData),
+  getAcademicPerformance: (userId) =>
+    api.get(`/academic/${userId}`),
+  updateAcademicPerformance: (userId, data) =>
+    api.post(`/academic/${userId}`, data),
+  addCourse: (userId, data) =>
+    api.post(`/academic/${userId}/courses`, data),
 };
 
-// Projects API calls
+/* =========================
+   PROJECT APIs
+========================= */
 export const projectsAPI = {
-  getUserProjects: (userId, params) => api.get(`/projects/${userId}`, { params }),
-  createProject: (projectData) => api.post('/projects', projectData),
-  updateProject: (projectId, projectData) => api.put(`/projects/${projectId}`, projectData),
-  deleteProject: (projectId) => api.delete(`/projects/${projectId}`),
+  getUserProjects: (userId, params) =>
+    api.get(`/projects/${userId}`, { params }),
+  createProject: (data) => api.post('/projects', data),
+  updateProject: (id, data) =>
+    api.put(`/projects/${id}`, data),
+  deleteProject: (id) =>
+    api.delete(`/projects/${id}`),
 };
 
-// Learning Activities API calls
+/* =========================
+   LEARNING ACTIVITY APIs
+========================= */
 export const learningActivitiesAPI = {
-  getUserLearningActivities: (userId, params) => api.get(`/learning-activities/${userId}`, { params }),
-  createLearningActivity: (activityData) => api.post('/learning-activities', activityData),
-  updateLearningActivity: (activityId, activityData) => api.put(`/learning-activities/${activityId}`, activityData),
-  deleteLearningActivity: (activityId) => api.delete(`/learning-activities/${activityId}`),
+  getUserLearningActivities: (userId, params) =>
+    api.get(`/learning-activities/${userId}`, { params }),
+  createLearningActivity: (data) =>
+    api.post('/learning-activities', data),
+  updateLearningActivity: (id, data) =>
+    api.put(`/learning-activities/${id}`, data),
+  deleteLearningActivity: (id) =>
+    api.delete(`/learning-activities/${id}`),
 };
 
 export default api;
